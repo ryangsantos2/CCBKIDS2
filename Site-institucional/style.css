@@ -1,23 +1,21 @@
 body {
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-        Geneva, Verdana, sans-serif;
-    ;
 }
 
 /* NAV BAR */
+
 .nav {
+    background-color: azure;
     width: 100%;
-    height: 90px;
+    height: 100px;
     display: flex;
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: sticky;
-    z-index: 100;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
+   
 }
 
 ul {
@@ -50,42 +48,95 @@ nav ul li {
 
 .img_logo {
     margin-left: 50px;
-    width: 75;
-    height: 100%;
+    width: 70px;
+    height: 100px;
 }
 
 /* NAV BAR */
 
 /* HOME */
 .home {
-    background-color: rgb(146, 146, 146);
+    background-color: rgb(185, 185, 185);
     width: 100%;
-    height: 400px;
+    height: 430px;
     display: flex;
     flex-direction: row;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
 }
 
 .home-direita {
-    width: 150%;
+    width: 50%;
 
+}
+
+.home-direita h1 {
+    text-align: center;
+}
+
+.home-direita h3 {
+    text-align: center;
 }
 
 .home-esquerda {
-    width: 150%;
+    width: 50%;
     display: flex;
+    
 }
 
 .imghome {
-    width: 550px;
+    width: 90%;
     height: 100%;
-    margin-left: 90px;
+   margin-left: 50px;
 
 }
 
-.texto-home{
+.texto-home {
     margin-top: 60px;
 }
+
 /* HOME */
 
 /* SOBRE */
 
+.sobre {
+    display: flex;
+    background-color: rgb(92, 92, 92);
+    width: 100%;
+    height: 300px;
+    color: aliceblue;
+
+}
+
+.sobre-esquerda {
+    width: 70%;
+    display: flex;
+}
+
+.img-sobre {
+    margin-left: 100px;
+
+}
+
+.sobre-direita {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.titulo-sobre {
+    background-color: rgb(92, 92, 92);
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.sobre-direita h3 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 70%;
+
+}
