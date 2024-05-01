@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
-   
+
 }
 
 ul {
@@ -47,7 +47,7 @@ nav ul li {
     border: 0px;
 }
 
-.nome-botao{
+.nome-botao {
     color: bisque;
 }
 
@@ -65,7 +65,6 @@ nav ul li {
     width: 100%;
     height: 430px;
     display: flex;
-    flex-direction: row;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
         Geneva, Verdana, sans-serif;
 }
@@ -86,13 +85,13 @@ nav ul li {
 .home-esquerda {
     width: 50%;
     display: flex;
-    
+
 }
 
 .imghome {
     width: 90%;
     height: 100%;
-   margin-left: 50px;
+    margin-left: 50px;
 
 }
 
@@ -108,7 +107,7 @@ nav ul li {
     display: flex;
     background-color: rgb(92, 92, 92);
     width: 100%;
-    height: 300px;
+    height: 320px;
     color: aliceblue;
 
 }
@@ -125,7 +124,6 @@ nav ul li {
 
 .sobre-direita {
     width: 50%;
-    margin-top: 20px;
 }
 
 .titulo-sobre {
@@ -144,4 +142,43 @@ nav ul li {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 70%;
 
+}
+
+/* SOBRE */
+
+/* HISTORIA */
+
+.historia-horarios {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(185, 185, 185);
+    display: flex;
+}
+
+.historia {
+    width: 70%;
+    background-color: red;
+    display: flex;
+ 
+    
+}
+
+.titulo-historia{
+    width: 100%;
+    height: 14%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.quadrado-historia{
+   
+    
+}
+
+/* HORARIO */
+
+.horario{
+    width: 30%;
+    background-color: rgb(89, 89, 141);
 }
