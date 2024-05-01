@@ -33,6 +33,7 @@ nav ul li {
     flex-direction: row;
     color: black;
     text-decoration: none;
+
 }
 
 .botao_cadastro {
@@ -42,8 +43,12 @@ nav ul li {
     border-radius: 25px;
     width: 125px;
     height: 50px;
-    background-color: D1D1D1;
+    background-color: rgb(27, 27, 27);
     border: 0px;
+}
+
+.nome-botao{
+    color: bisque;
 }
 
 .img_logo {
