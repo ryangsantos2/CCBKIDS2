@@ -1,5 +1,7 @@
+
+
 body {
-    margin: 0;
+    width: 100%;
 }
 
 /* NAV BAR */
@@ -53,7 +55,7 @@ nav ul li {
 
 .img_logo {
     margin-left: 50px;
-    width: 70px;
+    width: 65px;
     height: 100px;
 }
 
@@ -76,10 +78,12 @@ nav ul li {
 
 .home-direita h1 {
     text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .home-direita h3 {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .home-esquerda {
@@ -156,7 +160,8 @@ nav ul li {
 }
 
 .historia {
-    width: 70%;;
+    width: 70%;
+    ;
     display: flex;
     align-items: center;
 }
@@ -166,22 +171,29 @@ nav ul li {
     height: 450px;
     display: flex;
     align-items: center;
-    background-color:rgb(92, 92, 92);
+    background-color: rgb(92, 92, 92);
     margin: 30px;
     border-radius: 10px;
     color: aliceblue;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
 }
 
-.quadrado-historia b{
+.quadrado-historia b {
     width: 90%;
     height: 400px;
     text-align: center;
-    margin-left: 35PX;
+   
     display: flex;
-    /* justify-content: center; */
     align-items: center;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.quadrado-historia h1 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
 
 }
 
@@ -189,7 +201,30 @@ nav ul li {
 
 .horario {
     width: 30%;
-   
+    background-color: rgb(185, 185, 185);
+    display: flex;
+}
+
+.info-horarios {
+    background-color: rgb(92, 92, 92);
+    width: 370px;
+    height: 463px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    color: aliceblue;
     
-    
+}
+
+.info-horarios h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.info-horarios b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+   font-size: x-large;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
