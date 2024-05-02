@@ -228,3 +228,31 @@ nav ul li {
    font-size: x-large;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+/* HISTORIA-HORARIOS */
+
+/* FOOTER */
+
+.footer{
+    width: 100%;
+    height: 260px;
+    background-color: black;
+    display: flex;
+}
+
+.logo-redes{
+    background-color: brown;
+    width: 210px;
+    height: 100%;
+}
+
+.img-logo{
+    background-color: blueviolet;
+    width: 100%;
+    
+}
+
+.img-redes{
+    background-color: blue;
+}
+
+/* FOOTER */
