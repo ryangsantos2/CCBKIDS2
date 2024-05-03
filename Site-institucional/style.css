@@ -239,20 +239,60 @@ nav ul li {
     display: flex;
 }
 
-.logo-redes{
-    background-color: brown;
-    width: 210px;
+.img-redes{
+    width: 12%;
     height: 100%;
 }
 
-.img-logo{
-    background-color: blueviolet;
+.footer-logo{
+    width: 120px;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 36px;
+}
+
+.redes{
+    width: 90%;
+    margin-left: 20px;
+}
+
+.text-footer{
+    width: 88%;
+    height: 80%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title1{
+    text-decoration: none;
+}
+
+.copyright{
+    color: blanchedalmond;
+    background-color:black;
+    display: flex;
+    align-items: center;
     width: 100%;
-    
+    height: 12px;
+
 }
 
-.img-redes{
-    background-color: blue;
+.text-copy{
+   margin-left: 600px;
 }
 
+.li-footer{
+    flex-direction: row;
+    color: grey;
+    text-decoration: none;
+    text-align: center;
+}
+
+.text-footer ul li{
+    font-size: 18px;
+    display: flex;
+    padding-inline: 40px;
+}
 /* FOOTER */
