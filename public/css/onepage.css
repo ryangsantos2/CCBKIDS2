@@ -1,0 +1,298 @@
+
+
+body {
+    width: 100%;
+}
+
+/* NAV BAR */
+
+.nav {
+    background-color: azure;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+
+}
+
+ul {
+    display: flex;
+}
+
+nav ul li {
+    font-size: 18px;
+    display: flex;
+    padding-inline: 40px;
+
+}
+
+.nav-link {
+    flex-direction: row;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.botao_cadastro {
+    justify-content: end;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 25px;
+    width: 125px;
+    height: 50px;
+    background-color: rgb(27, 27, 27);
+    border: 0px;
+}
+
+.nome-botao {
+    color: bisque;
+}
+
+.img_logo {
+    margin-left: 50px;
+    width: 65px;
+    height: 100px;
+}
+
+/* NAV BAR */
+
+/* HOME */
+.home {
+    background-color: rgb(185, 185, 185);
+    width: 100%;
+    height: 430px;
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+        Geneva, Verdana, sans-serif;
+}
+
+.home-direita {
+    width: 50%;
+
+}
+
+.home-direita h1 {
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.home-direita h3 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-esquerda {
+    width: 50%;
+    display: flex;
+
+}
+
+.imghome {
+    width: 90%;
+    height: 100%;
+    margin-left: 50px;
+
+}
+
+.texto-home {
+    margin-top: 60px;
+}
+
+/* HOME */
+
+/* SOBRE */
+
+.sobre {
+    display: flex;
+    background-color: rgb(92, 92, 92);
+    width: 100%;
+    height: 320px;
+    color: aliceblue;
+
+}
+
+.sobre-esquerda {
+    width: 70%;
+    display: flex;
+}
+
+.img-sobre {
+    margin-left: 100px;
+
+}
+
+.sobre-direita {
+    width: 50%;
+}
+
+.titulo-sobre {
+    background-color: rgb(92, 92, 92);
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.sobre-direita h3 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 70%;
+
+}
+
+/* SOBRE */
+
+/* HISTORIA */
+
+.historia-horarios {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(185, 185, 185);
+    display: flex;
+}
+
+.historia {
+    width: 70%;
+    ;
+    display: flex;
+    align-items: center;
+}
+
+.quadrado-historia {
+    width: 900px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(92, 92, 92);
+    margin: 30px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+}
+
+.quadrado-historia b {
+    width: 90%;
+    height: 400px;
+    text-align: center;
+   
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.quadrado-historia h1 {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+}
+
+/* HORARIO */
+
+.horario {
+    width: 30%;
+    background-color: rgb(185, 185, 185);
+    display: flex;
+}
+
+.info-horarios {
+    background-color: rgb(92, 92, 92);
+    width: 370px;
+    height: 463px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    color: aliceblue;
+    
+}
+
+.info-horarios h1{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.info-horarios b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+   font-size: x-large;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* HISTORIA-HORARIOS */
+
+/* FOOTER */
+
+.footer{
+    width: 100%;
+    height: 260px;
+    background-color: black;
+    display: flex;
+}
+
+.img-redes{
+    width: 12%;
+    height: 100%;
+}
+
+.footer-logo{
+    width: 120px;
+    height: 160px;
+    margin-top: 20px;
+    margin-left: 36px;
+}
+
+.redes{
+    width: 90%;
+    margin-left: 20px;
+}
+
+.text-footer{
+    width: 88%;
+    height: 80%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title1{
+    text-decoration: none;
+}
+
+.copyright{
+    color: blanchedalmond;
+    background-color:black;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 12px;
+
+}
+
+.text-copy{
+   margin-left: 600px;
+}
+
+.li-footer{
+    flex-direction: row;
+    color: grey;
+    text-decoration: none;
+    text-align: center;
+}
+
+.text-footer ul li{
+    font-size: 18px;
+    display: flex;
+    padding-inline: 40px;
+}
+/* FOOTER */
