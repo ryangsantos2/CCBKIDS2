@@ -35,10 +35,13 @@ body {
 .header a {
   text-decoration: none;
   color: #e3b062;
+  padding-inline-start: 20px;
+  text-align: center;
 }
 
 .agora {
   font-weight: 800;
+  padding-inline: 30px;
 }
 
 .navbar {
@@ -48,6 +51,7 @@ body {
   justify-content: space-between;
   list-style: none;
   color: #e3b062;
+  
 }
 
 .titulo {
