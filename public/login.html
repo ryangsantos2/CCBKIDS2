@@ -21,17 +21,13 @@
 
     <div class="header">
         <div class="container">
-            <h1 class="titulo">CCBKIDS</h1>
+            <img src="assets/logo.png">
             <ul class="navbar">
                 <li>
                     <a href="./onepage.html">INICIAL</a>
                 </li>
                 <li>
-                    <a href="./calc.html">CALCULADORA</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">LOGIN</a>
+                    <a href="./calc.html">CALCULADORA DE VERSINHOS</a>
                 </li>
                 <li>
                     <a href="./cadastro.html">CADASTRO</a>
@@ -40,7 +36,7 @@
         </div>
     </div>
 
-
+    <!-- LOGIN -->
     <div class="login">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
@@ -49,7 +45,7 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
+                <h2>Bem vindo de volta!</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -70,16 +66,6 @@
             </div>
         </div>
     </div>
-
-    <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
-    <!--footer fim-->
-
 </body>
 
 </html>
@@ -90,8 +76,8 @@
     function entrar() {
         aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        let emailVar = email_input.value;
+        let senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"

@@ -1,5 +1,3 @@
-
-
 body {
     width: 100%;
 }
@@ -7,7 +5,7 @@ body {
 /* NAV BAR */
 
 .nav {
-    background-color: azure;
+    background-color:whitesmoke;
     width: 100%;
     height: 100px;
     display: flex;
