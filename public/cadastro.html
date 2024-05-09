@@ -50,8 +50,18 @@
                          Assim que inserir vá para o script abaixo.
                      -->
           <div class="campo">
+            <span>Comum:</span>
+            <select name="empresas" id="listaEmpresas">
+              <option selected>Selecione sua comum</option>
+            </select>
+          </div>
+          <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>CPF:</span>
+            <input id="cpf_input" type="text" placeholder="Seu cpf" maxlength="11"/>
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -65,6 +75,7 @@
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
+          
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
@@ -86,16 +97,24 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    
+    var empresaVar = listaEmpresas.value;
+  
+   const arroba = emailVar.indexOf('@')
+   const ponto = emailVar.indexOf('.')
+
     if (
       nomeVar == "" ||
+      cpfVar == ""||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-     
+      confirmacaoSenhaVar == ""||
+      empresaVar == ""
+      
+      
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -107,6 +126,41 @@
       setInterval(sumirMensagem, 5000);
     }
 
+    if(cpfVar.length <11|| cpfVar.length>11){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Cpf invalido. Certifique que contem 11 caracteres!)";
+
+      finalizarAguardar();
+      return false;
+    }
+
+    if(arroba<=0||ponto<=0){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Seu email deve conter domínio e endereço!)";
+
+      finalizarAguardar();
+      return false;
+    } 
+
+    if(senhaVar.length<8){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Sua senha precisa conter pelo menos 8 caracteres!)";
+      finalizarAguardar();
+      return false;
+    } 
+
+    if(senhaVar != confirmacaoSenhaVar){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(As senhas indicadas não são as mesmas!)";
+      finalizarAguardar();
+      return false;
+    } 
+
+    
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -117,9 +171,11 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        cpfServer: cpfVar
+        empresaServer: empresaVar
+        
       }),
     })
       .then(function (resposta) {
@@ -156,7 +212,7 @@
       .then(function (resposta) {
         resposta.json().then((empresas) => {
           empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.razao_social}</option>`;
           });
         });
       })

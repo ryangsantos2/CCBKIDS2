@@ -133,7 +133,7 @@ body {
 /* LOGIN */
 
 .login {
-  height: 505px;
+  height: 560px;
   background-color:rgb(92, 92, 92) ;
  
 }
@@ -155,6 +155,7 @@ body {
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 .card h2 {
@@ -242,7 +243,7 @@ body {
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #e6005a 3px solid;
+  border: #000000 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -264,7 +265,7 @@ body {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #000000;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -278,7 +279,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: #db0e5d;
   width: 120px;
   align-self: center;
   margin-top: 5px;

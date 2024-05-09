@@ -7,7 +7,6 @@ comandos para mysql server
 */
 
 CREATE DATABASE individual;
-
 USE individual;
 
 CREATE TABLE empresa (
@@ -19,9 +18,9 @@ CREATE TABLE empresa (
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
+    cpf CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50),
-    cpf CHAR(11),
 	fk_empresa INT,
 	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );
@@ -33,6 +32,7 @@ CREATE TABLE aviso (
 	fk_usuario INT,
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
+
 
 create table aquario (
 /* em nossa regra de negócio, um aquario tem apenas um sensor */
@@ -56,5 +56,19 @@ create table medida (
 	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
 );
 
-insert into empresa (razao_social, cnpj) values ('Empresa 1', '00000000000000');
+insert into empresa (razao_social, cnpj) values 
+('CCB Vila Terezinha', '12345678901234'),
+('CCB Bancária', '23456789012345'),
+('CCB Freguesia do Ó', '34567890123456'),
+('CCB Jardim Guarani', '45678901234567'),
+('CCB Guaimin', '56789012345678'),
+('CCB Vila Regina', '67890123456789'),
+('CCB Brasilândia', 78901234567890),
+('CCB Cruz das Almas', '61782764539827'),
+('CCB Vila Piscinin', '91876254356473'),
+('CCB Brás', '87370982763543'),
+('CCB Jaraguá', '76354678390283');
 insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
+
+SELECT * FROM usuario;
+SELECT * FROM empresa; 
