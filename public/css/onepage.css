@@ -1,6 +1,3 @@
-body {
-    width: 100%;
-}
 
 /* NAV BAR */
 
@@ -48,7 +45,7 @@ nav ul li {
 }
 
 .nome-botao {
-    color: bisque;
+    color: white;
 }
 
 .img_logo {
