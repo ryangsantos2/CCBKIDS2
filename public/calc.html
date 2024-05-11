@@ -18,17 +18,72 @@
         <button onclick="cadastrar()" class="botao_cadastro"><b class="nome-botao">CADASTRE-SE</b></button>
     </nav>
     <div class="container">
-        <div class="container-esquerda">
+        <div class="container_esquerda">
             <h1>CALCULADORA DE <br>VERSINHOS</h1>
-            <h3>Os versinhos, são pequenos papeis,distribuidos para as crianças nas reuniões de jovens e menores(nos domingos, as 10h) que contém versiculos pequenos da bíblia escritas no seu verso.
+            <h3>Os versinhos, são pequenos papeis,distribuidos para as crianças nas reuniões de jovens e menores(nos
+                domingos, as 10h) que contém versiculos pequenos da bíblia escritas no seu verso.
                 Aqui, você poderá descibrir quantos versinhos você terá ao longo dos anos que desejar. </h3>
         </div>
+        <div class="modal" id="modal"></div>
         <div class="container-direita">
-            <div class="calculadora">
-
+            <div class="calculadora" id="calculadora">
+                <h1>CALCULE AQUI!</h1><br><br>
+                <b>Quantos domingos você estipula faltar num mês?</b><br><br>
+                <input class="top-input" type="number" id="fault_month">
+                <br><br>
+                <b>Quanto tempo (em anos) você deseja analisar? (limite de 9 anos)</b><br><br>
+                <input class="botttom-input" type="number" id="year_consulting" max="9"><br><br>
+                <button onclick="calculate()">ANALISAR</button> <br><br>
+                <div class="result" id="result"></div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    function calculate() {
+        const fault = Number(fault_month.value);
+        const year = Number(year_consulting.value);
+
+        let sunday = 53
+        let count = sunday - fault
+
+        result.innerHTML = ''
+        modal.innerHTML = ''
+
+
+        if (fault == '' || year == '') {
+            result.innerHTML = `Preencha todos os campos`
+           
+        }
+
+        if (fault == '' && year >= 10) {
+            result.innerHTML = `Preencha todos os campos e insira um tempo até 9 anos`
+            return
+        }
+
+        if (year<1){
+            result.innerHTML = `Insira um número valido`
+            return
+        }
+
+        if (year > 9) {
+            result.innerHTML = `O numero limite de anos é 9 anos`
+            return
+        }
+
+        for (let i = 1; i <= year; i++) {
+
+            modal.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
+
+        }
+
+
+    }
+
+    function fechar() {
+        modal.style.display = 'none'
+    }
+</script>

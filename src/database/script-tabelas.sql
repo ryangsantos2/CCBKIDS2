@@ -63,7 +63,7 @@ insert into empresa (razao_social, cnpj) values
 ('CCB Jardim Guarani', '45678901234567'),
 ('CCB Guaimin', '56789012345678'),
 ('CCB Vila Regina', '67890123456789'),
-('CCB Brasilândia', 78901234567890),
+('CCB Brasilândia', '78901234567890'),
 ('CCB Cruz das Almas', '61782764539827'),
 ('CCB Vila Piscinin', '91876254356473'),
 ('CCB Brás', '87370982763543'),
