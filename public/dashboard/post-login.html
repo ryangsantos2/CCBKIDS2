@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/post.login.css">
     <title>Bem vindo de volta</title>
 </head>
-<body>
-   
-   <div class="all">
-    <div class="nav">
-        <img src="../assets/logo.png" alt="">
-    </div>
-    <div class="page">
 
+<body>
+
+    <div class="all">
+        <div class="nav">
+            <img src="../assets/logo.png" alt="">
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario"><br>usuário</span>!</h3>
+                <button onclick="voltar()">SAIR</button>
+            </div>
+        </div>
+        <div class="page">
+
+        </div>
     </div>
-</div>
 </body>
+<script>
+
+    function exibirAquarios() {
+        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+            document.getElementById("cardAquarios").innerHTML += `
+                    <div class="card-aquario">
+                        <div class="title-aquario">
+                            <h1>${item.descricao}</h1>
+                        </div>
+                        <div class="desc-aquario">
+                        <div class="temperatura">
+                            <p id="temp_aquario_${item.id}">-°C</p>
+                        </div>
+                        <div class="cor-alerta" id="card_${item.id}"></div>
+                    </div>
+                    </div>
+                    `
+        });
+    }
+
+</script>
+<script>
+    function voltar(){
+        window.location.href = '../index.html'
+    }
+</script>
 </html>
