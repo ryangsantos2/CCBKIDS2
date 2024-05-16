@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCBKIDS | CALCULADORA</title>
     <link rel="stylesheet" href="./css/calc.css">
-    <link rel="shortcut icon" href="../assets/principalhome.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -25,7 +27,22 @@
                 domingos, as 10h) que contém versiculos pequenos da bíblia escritas no seu verso.
                 Aqui, você poderá descibrir quantos versinhos você terá ao longo dos anos que desejar. </h3>
         </div>
-        <div class="modal" id="modal"></div>
+        <div id="myModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Resultado</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="modal_body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-direita">
             <div class="calculadora" id="calculadora">
                 <h1>CALCULE AQUI!</h1><br><br>
@@ -45,6 +62,13 @@
 
 <script>
     function calculate() {
+        function abreModal() {
+            $("#myModal").modal({
+                show: true
+            });
+        }
+
+        setTimeout(abreModal, 1000);
         const fault = Number(fault_month.value);
         const year = Number(year_consulting.value);
 
@@ -52,12 +76,12 @@
         let count = sunday - fault
 
         result.innerHTML = ''
-        modal.innerHTML = ''
+       modal_body.innerHTML = ''
 
 
         if (fault == '' || year == '') {
             result.innerHTML = `Preencha todos os campos`
-           
+
         }
 
         if (fault == '' && year >= 10) {
@@ -65,7 +89,7 @@
             return
         }
 
-        if (year<1){
+        if (year < 1) {
             result.innerHTML = `Insira um número valido`
             return
         }
@@ -77,19 +101,16 @@
 
         for (let i = 1; i <= year; i++) {
 
-            modal.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
+           modal_body.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
 
         }
 
 
     }
 
-    function fechar() {
-        modal.style.display = 'none'
-    }
 </script>
 <script>
-    function cadastrar(){
+    function cadastrar() {
         window.location.href = 'cadastro.html'
     }
 </script>
