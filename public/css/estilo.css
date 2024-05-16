@@ -184,7 +184,7 @@ body {
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
+  border: 2px solid grey;
   background-color: white;
   color: gray;
   height: 36px;
@@ -199,6 +199,8 @@ body {
   justify-content: start;
   padding: 5px 0;
 }
+
+
 
 .botao {
   cursor: pointer;
@@ -246,6 +248,7 @@ body {
   border: #000000 3px solid;
   padding: 10px;
   margin-right: 10%;
+  justify-content: center;
 }
 
 .card_erro #mensagem_erro{
