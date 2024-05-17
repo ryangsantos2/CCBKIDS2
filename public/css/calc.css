@@ -138,14 +138,11 @@ nav ul li {
 }
 
 .modal{
-    width: auto;
-    height: 78%;
     text-align: center;
-    background-color: brown;
-    border-radius: 20px;
-    border-style: none;
-    border-color: black;
-    margin-top:50px ;
 }
 
-/* RESULTADO */
+.modal #modal_body{
+    padding: 10px;
+}
+
+
