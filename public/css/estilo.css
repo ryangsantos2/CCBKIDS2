@@ -133,7 +133,7 @@ body {
 /* LOGIN */
 
 .login {
-  height: 560px;
+  height: 780px;
   background-color:rgb(92, 92, 92) ;
  
 }
@@ -155,7 +155,7 @@ body {
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .card h2 {

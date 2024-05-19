@@ -2,11 +2,17 @@
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var nomeFilho = sessionStorage.NOMEFILHO_USUARIO;
+    var idadeFilho = sessionStorage.IDADEFILHO_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+      var b_filho = document.getElementById("b_filho");
+      var b_idade = document.getElementById("b_idade");
 
     if (email != null && nome != null) {
         b_usuario.innerHTML = nome;
+         b_idade.innerHTML = idadeFilho;
+         b_filho.innerHTML = nomeFilho;
     } else {
         window.location = "../login.html";
     }

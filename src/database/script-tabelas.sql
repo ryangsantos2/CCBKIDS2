@@ -21,6 +21,8 @@ CREATE TABLE usuario (
     cpf CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50),
+    nomeFilho VARCHAR(50),
+    idadeFilho INT,
 	fk_empresa INT,
 	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );

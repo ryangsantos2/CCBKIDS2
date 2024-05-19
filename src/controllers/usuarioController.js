@@ -51,6 +51,8 @@ function autenticar(req, res) {
                             cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
+                            filho: resultadoAutenticar[0].filho,
+                            idade: resultadoAutenticar[0].idade
 
                         })
                     } else if (resultadoAutenticar.length == 0) {
@@ -76,8 +78,9 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    var filho = req.body.filhoServer;
+    var idade = req.body.idadeServer;
     var empresaId = req.body.empresaServer;
-
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -87,13 +90,17 @@ function cadastrar(req, res) {
     } else if (email == undefined) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
-        res.status(400).send("Sua senha está indefinido!");
-    } else if (empresaId == undefined) {
-        res.status(400).send("Sua empresa está indefinido!");
+        res.status(400).send("Sua senha está indefinida!");
+    }else if (filho == undefined) {
+        res.status(400).send("Seu nome está indefinida!");
+    }else if (idade == undefined) {
+        res.status(400).send("A idade do filho(a) está indefinida!");
+    }else if (empresaId == undefined) {
+        res.status(400).send("Sua comum está indefinida!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cpf, email, senha, empresaId)
+        usuarioModel.cadastrar(nome, cpf, email, senha, filho, idade, empresaId)
             .then(
                 function (resultado) {
                     res.json(resultado);
