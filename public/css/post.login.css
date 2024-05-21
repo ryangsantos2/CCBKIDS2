@@ -94,3 +94,13 @@ border-left: 2px solid;
     margin-left: 20px;
     margin-top: 40px;
 }
+
+.carousel{
+    width: 60vh;
+    height: 34vh;
+    background-color: blue;
+    margin-left: 8vh;
+    margin-top: 8vh;
+    display: flex;
+    
+}
