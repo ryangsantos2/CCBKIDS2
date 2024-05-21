@@ -51,7 +51,8 @@ function autenticar(req, res) {
                             cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
-
+                            nomeFilho: resultadoAutenticar[0].nomeFilho,
+                            idadeFilho: resultadoAutenticar[0].idadeFilho,
                         })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
