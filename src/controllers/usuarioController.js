@@ -51,14 +51,9 @@ function autenticar(req, res) {
                             cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
-<<<<<<< HEAD
                             nomeFilho: resultadoAutenticar[0].nomeFilho,
                             idadeFilho: resultadoAutenticar[0].idadeFilho,
-=======
-                            filho: resultadoAutenticar[0].filho,
-                            idade: resultadoAutenticar[0].idade
 
->>>>>>> 7052c943c3677d1f502e579cac4ce47f7f9c02dc
                         })
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
@@ -83,8 +78,8 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var filho = req.body.filhoServer;
-    var idade = req.body.idadeServer;
+    var nomeFilho = req.body.npmmeFilhoServer;
+    var idadeFilho = req.body.idadeFilhoServer;
     var empresaId = req.body.empresaServer;
 
     // Faça as validações dos valores
@@ -96,16 +91,16 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
-    }else if (filho == undefined) {
+    }else if (idadeFilho == undefined) {
         res.status(400).send("Seu nome está indefinida!");
-    }else if (idade == undefined) {
+    }else if (idadeFilho == undefined) {
         res.status(400).send("A idade do filho(a) está indefinida!");
     }else if (empresaId == undefined) {
         res.status(400).send("Sua comum está indefinida!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cpf, email, senha, filho, idade, empresaId)
+        usuarioModel.cadastrar(nome, cpf, email, senha, nomeFilho, idadeFilho, empresaId)
             .then(
                 function (resultado) {
                     res.json(resultado);
