@@ -61,7 +61,7 @@
           </div>
           <div class="campo">
             <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="Seu cpf" maxlength="11"/>
+            <input id="cpf_input" type="text" placeholder="Seu cpf" maxlength="11" />
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -75,7 +75,15 @@
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
-          
+          <div class="campo">
+            <span>Informe o nome do seu filho(a):</span>
+            <input id="filho_input" type="text" placeholder="Filho(a)" />
+          </div>
+          <div class="campo">
+            <span>Qual a idade do filho cadastrado?:</span>
+            <input id="idade_input" type="number" placeholder="Idade do filho" />
+          </div>
+
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
@@ -101,20 +109,28 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var filhoVar = filho_input.value
+    var idadeVar = Number(idade_input.value)
     var empresaVar = listaEmpresas.value;
-  
-   const arroba = emailVar.indexOf('@')
-   const ponto = emailVar.indexOf('.')
+
+    let listaNumero = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    const arroba = emailVar.indexOf('@')
+    const ponto = emailVar.indexOf('.')
+
+
 
     if (
       nomeVar == "" ||
-      cpfVar == ""||
+      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""||
+      confirmacaoSenhaVar == "" ||
+      filhoVar == "" ||
+      idadeVar == "" ||
       empresaVar == ""
-      
-      
+
+
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -126,7 +142,7 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    if(cpfVar.length <11|| cpfVar.length>11){
+    if (cpfVar.length < 11 || cpfVar.length > 11) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Cpf invalido. Certifique que contem 11 caracteres!)";
@@ -135,32 +151,50 @@
       return false;
     }
 
-    if(arroba<=0||ponto<=0){
+    if (arroba <= 0 || ponto <= 0) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Seu email deve conter domínio e endereço!)";
 
       finalizarAguardar();
       return false;
-    } 
+    }
 
-    if(senhaVar.length<8){
+    if (senhaVar.length < 8) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Sua senha precisa conter pelo menos 8 caracteres!)";
       finalizarAguardar();
       return false;
-    } 
+    }
 
-    if(senhaVar != confirmacaoSenhaVar){
+    if (senhaVar != confirmacaoSenhaVar) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(As senhas indicadas não são as mesmas!)";
       finalizarAguardar();
       return false;
-    } 
+    }
 
-    
+    if (filhoVar < 1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Nome deve ter mais de uma letra!)";
+
+      finalizarAguardar();
+      return false;
+    }
+
+    if (idadeVar > 13) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(A idade mínima para uso do espaço é de 13 anos!)";
+
+      finalizarAguardar();
+      return false;
+    }
+
+
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -174,8 +208,10 @@
         cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
+        filhoServer: filhoVar,
+        idadeServer: idadeVar,
         empresaServer: empresaVar
-        
+
       }),
     })
       .then(function (resposta) {
