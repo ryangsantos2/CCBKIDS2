@@ -96,11 +96,57 @@ border-left: 2px solid;
 }
 
 .carousel{
-    width: 60vh;
-    height: 34vh;
+   
     background-color: blue;
-    margin-left: 8vh;
+   
+    
+}
+
+.carousel {
+     width: 60vh;
+    height: 34vh;
+     margin-left: 8vh;
     margin-top: 8vh;
     display: flex;
+    position: relative;
+    overflow: hidden;
+  }
     
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+  }
+
+  
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    
+  }
+  
+  .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prevBtn img,
+#nextBtn img{
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    padding-inline: 50px;
 }

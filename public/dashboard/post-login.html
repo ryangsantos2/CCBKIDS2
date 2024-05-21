@@ -40,56 +40,45 @@
                 </div>
             </div>
             <div class="carousel">
-                dddd
+                <div class="carousel-slide">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGT-BmzBZww4HPWvq3Qad5ITjgqZ0NxPdghNf36whsMQ&s" alt="Image 1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJJJetVhIYmIFOWIYaPleBap8711_IeDn5K6Ej-_YLSQ&s" alt="Image 2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdIpnmYZ4mkQu3MmDhaATBv2_C0giJfOemi7KBPIJ0LA&s" alt="Image 3">
+                  </div>
+                  <div class="carousel-buttons">
+                    <button id="prevBtn"><img src="../assets/left.png" alt=""></button>
+                    <button id="nextBtn"><img src="../assets/right.png" alt=""></button>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
-
-</script>
 <script>
     function voltar() {
         window.location.href = '../index.html'
     }
 </script>
 <script>
+    const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselSlide = document.querySelector('.carousel-slide');
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
+let counter = 0;
+const slideWidth = carouselSlide.children[0].clientWidth;
+
+nextBtn.addEventListener('click', () => {
+  if (counter >= carouselSlide.children.length - 1) return;
+  counter++;
+  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+});
+
+prevBtn.addEventListener('click', () => {
+  if (counter <= 0) return;
+  counter--;
+  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+});
 
 </script>
 </html>
