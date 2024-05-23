@@ -69,7 +69,7 @@
                        <input id="qtd_faltas"><br><br>
                         <button onclick="resultado()">Ver estatística</button>
                     </div>
-                    <div id="change2" style="display:none;">
+                    <div id="change2">
                         <canvas id="tabela_linha"></canvas>
                     </div>
                 </div>
@@ -124,6 +124,10 @@
 <script>
     let total = 4
     let falta = qtd_falta.value
+
+    if(falta = ''){
+        falta = 0
+    }
 
     const data = {
         labels: [

@@ -209,11 +209,14 @@ border-left: 2px solid;
     flex-direction:row ;
 }
 
+canvas{
+    z-index: 10;
+}
 
 .linha .barra {
     position: relative;
-    height: 20vw;
-    width: 44vw;
+    height: 10vw;
+    width: 24vw;
 }
 
 .titleChart{
@@ -223,5 +226,14 @@ border-left: 2px solid;
 
 .intro_quiz input{
     width: 100px;
-    height: 10px;
+    height: 20px;
+}
+
+.intro_quiz button{
+    background-color: brown;
+    border-radius: 20px;
+    border: 2px solid;
+    border-color: black ;
+    color: white;
+    height: 25px;
 }
