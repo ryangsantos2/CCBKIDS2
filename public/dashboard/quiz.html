@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Quiz bíblico</title>
 </head>
+
 <body>
 
     <h2>TESTE SEU CONHECIMENTO SOBRE A BÍBLIA</h2>
@@ -20,8 +22,9 @@
             <button>Reiniciar</button>
         </div>
     </main>
-
+    <button class="botao_voltar" onclick="retornar()">Voltar a pagina anterior</button>
 </body>
+
 </html>
 <script>
     const questions = [
@@ -172,4 +175,9 @@
     }
 
     loadQuestion();
+</script>
+<script>
+    function retornar(){
+        window.location.href = 'post-login.html'
+    }
 </script>
