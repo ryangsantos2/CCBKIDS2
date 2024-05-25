@@ -21,6 +21,16 @@ body h2 {
     color: white;
 }
 
+.botao_voltar{
+    background-color: black;
+    text-align: center;
+    color: white;
+    width: auto;
+    justify-content: start;
+    align-items: start;
+    margin-top: 50px;
+}
+
 main{
     background-color: white;
     padding: 10px;

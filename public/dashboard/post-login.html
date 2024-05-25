@@ -28,17 +28,38 @@
                 <button onclick="voltar()">SAIR</button>
             </div>
         </div>
-        <div class="page">
-            <div class="informacao">
-                <div class="info1">
-                    <span>Nome do filho:</span><br><br>
-                    <h4><span id="b_filho">nomeFilho</span></h4>
+        <div class="pages">
+            <div class="page1">
+                <div class="informacao">
+                    <div class="info1">
+                        <span>Nome do filho:</span><br><br>
+                        <h4><span id="b_filho">nomeFilho</span></h4>
+                    </div>
+                    <div class="info2">
+                        <span>Idade:</span><br><br>
+                        <h4><span id="b_idade">idadeFilho</span></h4>
+                    </div>
                 </div>
-                <div class="info2">
-                    <span>Idade:</span><br><br>
-                    <h4><span id="b_idade">idadeFilho</span></h4>
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGT-BmzBZww4HPWvq3Qad5ITjgqZ0NxPdghNf36whsMQ&s"
+                            alt="Image 1">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJJJetVhIYmIFOWIYaPleBap8711_IeDn5K6Ej-_YLSQ&s"
+                            alt="Image 2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv4VRWSH0xMwAe4oQzhnCZwGxml2xAJp3o4FlPpt9k_g&s"
+                            alt="Image 3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0__dhOLt46Do2dzjJK0Wrm_BFvI-uGtwwfQXHNjDFOg&s"
+                            alt="Image 4">
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="set" id="prevBtn"><img src="../assets/left.png" alt=""></button>
+                        <div class="nextBtn">
+                            <button class="set" id="nextBtn"><img src="../assets/right.png" alt=""></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="carousel">
                 <div class="carousel-slide">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGT-BmzBZww4HPWvq3Qad5ITjgqZ0NxPdghNf36whsMQ&s" alt="Image 1">
@@ -49,6 +70,26 @@
                     <div>
                     <button id="prevBtn"><img src="../assets/left.png" alt=""></button>
                     <button id="nextBtn"><img src="../assets/right.png" alt=""></button>
+
+            <div class="space">
+                <span class="titleChart">FREQUENCIA:</span>
+            </div>
+            <div class="page2">
+                <div class="intro_quiz">
+                    <div id="change">
+                       <br><br><span class="titleChart">Quantos dias a criança não compareceu este mês?</span><br><br>
+                       <input id="qtd_faltas"><br><br>
+                        <button onclick="resultado()">Ver estatística</button>
+                    </div>
+                    <div id="change2">
+                        <canvas id="tabela_linha"></canvas>
+                    </div>
+                </div>
+                <div class="quiz_direction">
+                    <button class="button_quiz" onclick="fazerQuiz()"><img
+                            src="https://img.quizur.com/f/img5f3ad5ee0428a3.87745517.png?lastEdited=1597691502"
+                            alt=""></button>
+>>>>>>> 2ea4ce4340d00882b438bf58b0c27b6be253e20b
                 </div>
                 </div>
             </div>
@@ -62,25 +103,71 @@
 </script>
 <script>
     const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const carouselSlide = document.querySelector('.carousel-slide');
+    const nextBtn = document.getElementById('nextBtn');
+    const carouselSlide = document.querySelector('.carousel-slide');
 
-let counter = 0;
-const slideWidth = carouselSlide.children[0].clientWidth;
+    let counter = 0;
+    const slideWidth = carouselSlide.children[0].clientWidth;
 
-nextBtn.addEventListener('click', () => {
-  if (counter >= carouselSlide.children.length - 1) return;
-  counter++;
-  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
-});
+    nextBtn.addEventListener('click', () => {
+        if (counter >= carouselSlide.children.length - 1) return;
+        counter++;
+        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+        carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+    });
 
-prevBtn.addEventListener('click', () => {
-  if (counter <= 0) return;
-  counter--;
-  carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
-});
+    prevBtn.addEventListener('click', () => {
+        if (counter <= 0) return;
+        counter--;
+        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+        carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+    });
 
 </script>
+<script>
+    function fazerQuiz() {
+        window.location.href = 'quiz.html'
+    }
+</script>
+<script>
+    function resultado() {
+        document.getElementById('change').style.display = 'none'
+        document.getElementById('change2').style.display = 'block'
+    }
+</script>
+<script>
+    let total = 4
+    let falta = qtd_falta.value
+
+    if(falta = ''){
+        falta = 0
+    }
+
+    const data = {
+        labels: [
+            'Faltas',
+            'Presença'
+        ],
+        datasets: [{
+            label: 'Presenças',
+            data: [total, falta - total],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+    const config = {
+        type: 'doughnut',
+        data: data,
+    };
+</script>
+<script>
+    const tabela_linha = new Chart(
+        document.getElementById('tabela_linha'),
+        config
+    );
+</script>
+
 </html>
