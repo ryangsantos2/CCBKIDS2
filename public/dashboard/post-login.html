@@ -24,7 +24,7 @@
         <div class="nav">
             <img src="../assets/logo.png" alt="">
             <div class="hello">
-                <h3>Olá, <span id="b_usuario"><br>usuário</span>!</h3>
+                <h3>Olá, <br> <span id="b_usuario"><br>usuário</span>!</h3>
                 <button onclick="voltar()">SAIR</button>
             </div>
         </div>
@@ -59,26 +59,15 @@
                     </div>
                 </div>
             </div>
-
-            <div class="carousel">
-                <div class="carousel-slide">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGT-BmzBZww4HPWvq3Qad5ITjgqZ0NxPdghNf36whsMQ&s" alt="Image 1">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJJJetVhIYmIFOWIYaPleBap8711_IeDn5K6Ej-_YLSQ&s" alt="Image 2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdIpnmYZ4mkQu3MmDhaATBv2_C0giJfOemi7KBPIJ0LA&s" alt="Image 3">
-                  </div>
-                  <div class="carousel-buttons">
-                    <div>
-                    <button id="prevBtn"><img src="../assets/left.png" alt=""></button>
-                    <button id="nextBtn"><img src="../assets/right.png" alt=""></button>
-
             <div class="space">
                 <span class="titleChart">FREQUENCIA:</span>
             </div>
             <div class="page2">
                 <div class="intro_quiz">
                     <div id="change">
-                       <br><br><span class="titleChart">Quantos dias a criança não compareceu este mês?</span><br><br>
-                       <input id="qtd_faltas"><br><br>
+                        <br><br><span class="titleChart">Quantos dias a criança não compareceu este
+                            mês?</span><br><br>
+                        <input id="qtd_faltas"><br><br>
                         <button onclick="resultado()">Ver estatística</button>
                     </div>
                     <div id="change2">
@@ -89,9 +78,6 @@
                     <button class="button_quiz" onclick="fazerQuiz()"><img
                             src="https://img.quizur.com/f/img5f3ad5ee0428a3.87745517.png?lastEdited=1597691502"
                             alt=""></button>
->>>>>>> 2ea4ce4340d00882b438bf58b0c27b6be253e20b
-                </div>
-                </div>
                 </div>
             </div>
         </div>
@@ -140,7 +126,7 @@
     let total = 4
     let falta = qtd_falta.value
 
-    if(falta = ''){
+    if (falta = '') {
         falta = 0
     }
 
