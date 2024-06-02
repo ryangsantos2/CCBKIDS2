@@ -6,21 +6,20 @@ body{
 
 .all{
     display: flex;
-    flex-direction: row;
-
+    flex-direction: row;;
 }
 
 .nav{
     background-color: rgb(139, 122, 122);
     width: 18%;
-    height: 640px;
+    height: 607px;
     display: flex;
     flex-direction:column;
 }
 
 .hello button{
     margin-top: 260px;
-    margin-left: 70px;
+    margin-left: 50px;
     background-color: brown;
     color: rgb(246, 249, 252);
     border-radius: 20px;
@@ -43,12 +42,6 @@ body{
     margin-top: 10px;
 }
 
-.page{
-    background-color: rgb(214, 214, 221);
-   width: 82%;
-    height: 640px;
-    display: flex;
-}
 
 .informacao{
     background-color: blue;
@@ -69,8 +62,8 @@ width: 50%;
 height: 100%;
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
-border-rigth-color:black ;
-border-rigth: 2px solid;
+border-right-color:black ;
+border-right: 2px solid;
 }
 
 
@@ -95,7 +88,6 @@ border-left: 2px solid;
     margin-top: 40px;
 }
 
-
 .carousel {
      width: 60vh;
     height: 34vh;
@@ -104,6 +96,7 @@ border-left: 2px solid;
     display: flex;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
   }
     
   .carousel-slide {
@@ -117,7 +110,7 @@ border-left: 2px solid;
     height: auto;
   }
   
-  button {
+  .set {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -130,17 +123,117 @@ border-left: 2px solid;
   
   .carousel-buttons {
     position: absolute;
+    
+    width: 100%;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nextBtn{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    right: 0;
+    
 }
 
 #prevBtn img,
 #nextBtn img{
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    width: 20px;
+    background-color: white;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.space{
+    background-color: rgb(214, 214, 221);
+}
+
+.space span{
+    margin-left: 20px;
+}
+
+.intro_quiz{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.quiz_direction{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz_direction img{
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.button_quiz{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 70px;
+    background-color: rgb(214, 214, 221);
+    border: 0;
+}
+
+.pages{
+    display: flex;
+    flex-direction: column;
+}
+
+.page1{
+    background-color: rgb(214, 214, 221);
+   width: 190vh;
+    height: 50%;
+    display: flex;
+}
+
+.page2{
+    width: 190vh;
+    height: 50%;
+    background-color: rgb(214, 214, 221);
+    display: flex;
+    flex-direction:row ;
+}
+
+canvas{
+    z-index: 10;
+}
+
+.linha .barra {
+    position: relative;
+    height: 10vw;
+    width: 24vw;
+}
+
+.titleChart{
+    font-size: larger;
+    font-weight: 700;
+}   
+
+.intro_quiz input{
+    width: 100px;
     height: 20px;
-    padding-inline: 50px;
+}
+
+.intro_quiz button{
+    background-color: brown;
+    border-radius: 20px;
+    border: 2px solid;
+    border-color: black ;
+    color: white;
+    height: 25px;
 }
