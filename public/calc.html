@@ -50,7 +50,7 @@
                 <b>Quantos domingos você estipula faltar num mês?</b><br><br>
                 <input class="top-input" type="number" id="fault_month">
                 <br><br>
-                <b>Quanto tempo (em anos) você deseja analisar? (limite de 9 anos)</b><br><br>
+                <b>Quanto tempo (em anos) você deseja analisar?</b><br><br>
                 <input class="botttom-input" type="number" id="year_consulting" max="9"><br><br>
                 <button onclick="calculate()">ANALISAR</button> <br><br>
                 <div class="result" id="result"></div>
@@ -77,7 +77,7 @@
         let count = sunday - fault
 
         result.innerHTML = ''
-       modal_body.innerHTML = ''
+        modal_body.innerHTML = ''
 
 
         if (fault == '' || year == '') {
@@ -85,28 +85,24 @@
 
         }
 
-        if (fault == '' && year >= 10) {
+        else if (fault == '' && year >= 10) {
             result.innerHTML = `Preencha todos os campos e insira um tempo até 9 anos`
             return
         }
 
-        if (year < 1) {
+        else if (year < 1) {
             result.innerHTML = `Insira um número valido`
             return
         }
+         else {
 
-        if (year > 9) {
-            result.innerHTML = `O numero limite de anos é 9 anos`
-            return
-        }
+            for (let i = 1; i <= year; i++) {
 
-        for (let i = 1; i <= year; i++) {
+                modal_body.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
 
-           modal_body.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
+            }
 
         }
-
-
     }
 
 </script>
