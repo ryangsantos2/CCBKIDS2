@@ -20,7 +20,7 @@ body{
 
 .hello button{
     margin-top: 260px;
-    
+    margin-left: 50px;
     background-color: brown;
     color: rgb(246, 249, 252);
     border-radius: 20px;
@@ -46,8 +46,8 @@ body{
 
 .informacao{
     background-color: blue;
-    width: 600px;
-    height: 200px;
+    width: 700px;
+    height: 220px;
     margin: 50px;
     border-radius: 15px;
     border-color: black;
@@ -87,7 +87,7 @@ border-left: 2px solid;
 .carousel {
      width: 60vh;
     height: 34vh;
-     margin-left: 12vh;
+     margin-left: 6vh;
     margin-top: 8vh;
     display: flex;
     position: relative;
