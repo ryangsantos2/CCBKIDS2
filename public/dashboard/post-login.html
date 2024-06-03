@@ -67,7 +67,13 @@
                     <div id="change" style="display: block;">
                         <br><br><span class="titleChart">O espaço funciona 5 dias num mês, portanto, quantos dias a criança não compareceu este
                             mês?</span><br><br>
-                        <input id="qtd_faltas"><br><br>
+                        <select id="qtd_faltas">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select><br><br>
                         <button onclick="resultado()">Ver estatística</button>
                     </div>
                     <div id="change2" style="display: none;">
@@ -123,9 +129,12 @@
     
     let total = 5
     let falta_crianca = Number(qtd_faltas.value)
+
     let presenca = total - falta_crianca
     let falta = total - presenca
+    let nomeFilho = sessionStorage.ID_USUARIO;
 
+    
     const data = {
         labels: [
             'Faltas',
@@ -135,8 +144,8 @@
             label: 'Presenças',
             data: [falta, presenca],
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)'
+                'rgb(226, 43, 43)',
+                'rgb(43, 226, 67)'
             ],
             hoverOffset: 4
         }]
@@ -150,6 +159,27 @@
         document.getElementById('tabela_linha'),
         config
     );
+    
+    fetch('/freq/armazenar', {
+        method: 'POST',
+        headers: {
+        "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            presencaServer: presenca,
+            faltaServer: falta,
+            idFilhoServer: nomeFilho
+        })
+    })
+    .then(function(resposta){
+        if(resposta.ok){
+            console.log('Deu bom!')
+        } else {
+            console.log('Deu ruim!')
+        }
+    })
+   
+    
 }
 </script>
 

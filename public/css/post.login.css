@@ -222,7 +222,7 @@ canvas{
     font-weight: 700;
 }   
 
-.intro_quiz input{
+.intro_quiz select{
     width: 100px;
     height: 20px;
 }

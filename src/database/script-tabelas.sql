@@ -27,6 +27,15 @@ CREATE TABLE usuario (
 	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );
 
+CREATE TABLE frequencia(
+idFreq int PRIMARY KEY AUTO_INCREMENT,
+fkFilho int,
+	FOREIGN KEY(fkFilho)
+		REFERENCES usuario(id),
+falta int,
+presenca int
+);
+
 insert into empresa (razao_social, cnpj) values 
 ('CCB Vila Terezinha', '12345678901234'),
 ('CCB Bancária', '23456789012345'),
@@ -42,5 +51,3 @@ insert into empresa (razao_social, cnpj) values
 
 SELECT * FROM usuario;
 SELECT * FROM empresa; 
-
-drop database individual;
