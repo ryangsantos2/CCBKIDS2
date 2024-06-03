@@ -11,15 +11,16 @@ body{
 
 .nav{
     background-color: rgb(139, 122, 122);
-    width: 18%;
-    height: 607px;
+    width: 500px;
+    height: 100vh;
     display: flex;
     flex-direction:column;
+    align-items: center;
 }
 
 .hello button{
     margin-top: 260px;
-    margin-left: 50px;
+    
     background-color: brown;
     color: rgb(246, 249, 252);
     border-radius: 20px;
@@ -38,7 +39,7 @@ body{
     display: flex;
     width: 90px;
     height: 130px;
-    margin-left: 70px;
+    
     margin-top: 10px;
 }
 
@@ -47,8 +48,7 @@ body{
     background-color: blue;
     width: 600px;
     height: 200px;
-    margin-left: 50px;
-    margin-top: 50px;
+    margin: 50px;
     border-radius: 15px;
     border-color: black;
     border: 3px solid;
@@ -77,21 +77,17 @@ border-left-color:black ;
 border-left: 2px solid;
 }
  
-.info1 span{
+.info1 span, .info2 span {
     font-size: 40px;
+    margin-top: 10px; 
     margin-left: 20px;
-    margin-top: 40px;
 }
- .info2 span{
-    font-size: 40px;
-    margin-left: 20px;
-    margin-top: 40px;
-}
+
 
 .carousel {
      width: 60vh;
     height: 34vh;
-     margin-left: 8vh;
+     margin-left: 12vh;
     margin-top: 8vh;
     display: flex;
     position: relative;
@@ -154,6 +150,8 @@ border-left: 2px solid;
 
 .space span{
     margin-left: 20px;
+    font-size: larger; /* Ajustando o tamanho da fonte */
+    font-weight: bold;
 }
 
 .intro_quiz{

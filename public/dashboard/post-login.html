@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/principalhome.png">
     <link rel="stylesheet" href="../css/post.login.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/sessao.js"></script>
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
@@ -64,13 +64,13 @@
             </div>
             <div class="page2">
                 <div class="intro_quiz">
-                    <div id="change">
-                        <br><br><span class="titleChart">Quantos dias a criança não compareceu este
+                    <div id="change" style="display: block;">
+                        <br><br><span class="titleChart">O espaço funciona 5 dias num mês, portanto, quantos dias a criança não compareceu este
                             mês?</span><br><br>
                         <input id="qtd_faltas"><br><br>
                         <button onclick="resultado()">Ver estatística</button>
                     </div>
-                    <div id="change2">
+                    <div id="change2" style="display: none;">
                         <canvas id="tabela_linha"></canvas>
                     </div>
                 </div>
@@ -118,17 +118,13 @@
 </script>
 <script>
     function resultado() {
-        document.getElementById('change').style.display = 'none'
-        document.getElementById('change2').style.display = 'block'
-    }
-</script>
-<script>
-    let total = 4
-    let falta = qtd_faltas.value
-
-    if (falta = '') {
-        falta = 0
-    }
+        change.style.display = 'none'
+        change2.style.display = 'block'
+    
+    let total = 5
+    let falta_crianca = Number(qtd_faltas.value)
+    let presenca = total - falta_crianca
+    let falta = total - presenca
 
     const data = {
         labels: [
@@ -137,7 +133,7 @@
         ],
         datasets: [{
             label: 'Presenças',
-            data: [total, falta - total],
+            data: [falta, presenca],
             backgroundColor: [
                 'rgb(255, 99, 132)',
                 'rgb(54, 162, 235)'
@@ -149,12 +145,12 @@
         type: 'doughnut',
         data: data,
     };
-</script>
-<script>
+
     const tabela_linha = new Chart(
         document.getElementById('tabela_linha'),
         config
     );
+}
 </script>
 
 </html>
