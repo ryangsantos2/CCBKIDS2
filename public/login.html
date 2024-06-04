@@ -110,6 +110,31 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
+       function procurar(){
+        let nomeVar = sessionStorage.NOME_USUARIO
+        
+        fetch("/usuarios/procurar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMPRESA_NOME
+                });
+            }
+        })
+       }
+    
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -131,10 +156,8 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.CPF_USUARIO = json.cpf;
-                    sessionStorage.FILHO_USUARIO = json.filho;
-                    sessionStorage.IDADE_USUARIO = json.idade;
                     sessionStorage.ID_USUARIO = json.id;
-
+                    sessionStorage.EMPRESA_NOME = json.razao_social;
                     setTimeout(function () {
                         window.location = "./dashboard/post-login.html";
                     }, 1000); // apenas para exibir o loading

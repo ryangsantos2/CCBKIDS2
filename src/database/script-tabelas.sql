@@ -51,3 +51,7 @@ insert into empresa (razao_social, cnpj) values
 
 SELECT * FROM usuario;
 SELECT * FROM empresa; 
+SELECT usuario.filho as Filho, frequencia.falta as Falta, frequencia.presenca AS Presenca
+FROM frequencia
+JOIN usuario
+ON frequencia.fkFilho = usuario.id;

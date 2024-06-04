@@ -75,15 +75,6 @@
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
-          <div class="campo">
-            <span>Informe o nome do seu filho(a):</span>
-            <input id="filho_input" type="text" placeholder="Filho(a)" />
-          </div>
-          <div class="campo">
-            <span>Qual a idade do filho cadastrado?:</span>
-            <input id="idade_input" type="number" placeholder="Idade do filho" />
-          </div>
-
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
@@ -108,8 +99,6 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var filhoVar = filho_input.value
-    var idadeVar = Number(idade_input.value)
     var empresaVar = listaEmpresas.value;
 
     let listaNumero = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -125,8 +114,6 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      filhoVar == "" ||
-      idadeVar == "" ||
       empresaVar == ""
 
 
@@ -175,24 +162,6 @@
       return false;
     }
 
-    if (filhoVar < 1) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Nome deve ter mais de uma letra!)";
-
-      finalizarAguardar();
-      return false;
-    }
-
-    if (idadeVar > 13) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(A idade mínima para uso do espaço é de 13 anos!)";
-
-      finalizarAguardar();
-      return false;
-    }
-
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -206,10 +175,7 @@
         cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        filhoServer: filhoVar,
-        idadeServer: idadeVar,
         empresaServer: empresaVar
-
       }),
     })
       .then(function (resposta) {
