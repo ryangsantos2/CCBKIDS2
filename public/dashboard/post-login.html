@@ -31,8 +31,8 @@
         <div class="pages">
             <div class="page1">
                 <div class="informacao">
-                    <div class="info1">
-                        <span>Comum Congregação:</span><br><br>
+                    <div class="info1 ">
+                        <span id="tiuloInfo1">Comum Congregação:</span>
                         <h4><span id="b_empresa">nomeEmpresa</span></h4>
                     </div>
                 </div>
@@ -64,6 +64,7 @@
                         <br><br><span class="titleChart">O espaço funciona 5 dias num mês, portanto, quantos dias a criança não compareceu este
                             mês?</span><br><br>
                         <select id="qtd_faltas">
+                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -137,7 +138,6 @@
             'Presença'
         ],
         datasets: [{
-            label: 'Presenças',
             data: [falta, presenca],
             backgroundColor: [
                 'rgb(226, 43, 43)',

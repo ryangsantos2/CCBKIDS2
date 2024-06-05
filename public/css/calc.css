@@ -39,6 +39,7 @@ nav ul li {
     border-radius: 25px;
     width: 130px;
     height: 50px;
+    cursor: pointer;
     background-color: rgb(27, 27, 27);
     border: 0px;
 }
