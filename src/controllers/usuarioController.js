@@ -23,7 +23,7 @@ function autenticar(req, res) {
                             cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
-                            razao_social: resultadoAutenticar[0].razao_social
+                            nome_comum: resultadoAutenticar[0].nome_comum
 
                         })
                     } else if (resultadoAutenticar.length == 0) {
@@ -49,7 +49,7 @@ function cadastrar(req, res) {
     var cpf = req.body.cpfServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var empresaId = req.body.empresaServer;
+    var comumId = req.body.comumServer;
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -60,12 +60,12 @@ function cadastrar(req, res) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
-    }else if (empresaId == undefined) {
+    }else if (comumId == undefined) {
         res.status(400).send("Sua comum está indefinida!");
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cpf, email, senha, empresaId)
+        usuarioModel.cadastrar(nome, cpf, email, senha, comumId)
             .then(
                 function (resultado) {
                     res.json(resultado);

@@ -102,7 +102,7 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var empresaVar = listaEmpresas.value;
+    var comumVar = listaEmpresas.value;
 
     let listaNumero = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -117,7 +117,7 @@
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      empresaVar == ""
+      comumVar == ""
 
 
     ) {
@@ -178,7 +178,7 @@
         cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        empresaServer: empresaVar
+        comumServer: comumVar
       }),
     })
       .then(function (resposta) {
@@ -214,8 +214,8 @@
     })
       .then(function (resposta) {
         resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.razao_social}</option>`;
+          empresas.forEach((comum) => {
+            listaEmpresas.innerHTML += `<option value='${comum.id}'>${comum.nome_comum}</option>`;
           });
         });
       })

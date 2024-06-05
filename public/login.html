@@ -132,7 +132,7 @@
                     resposta.json().then(json => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-                        sessionStorage.EMPRESA_NOME = json.razao_social;
+                        sessionStorage.COMUM_NOME = json.nome_comum;
                     });
                 }
             })
@@ -160,7 +160,7 @@
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.CPF_USUARIO = json.cpf;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.EMPRESA_NOME = json.razao_social;
+                    sessionStorage.COMUM_NOME = json.nome_comum;
                     setTimeout(function () {
                         window.location = "./dashboard/post-login.html";
                     }, 1000); // apenas para exibir o loading
