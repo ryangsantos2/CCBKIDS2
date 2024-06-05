@@ -58,53 +58,38 @@
         </div>
     </div>
 </body>
-
 </html>
-
 <script>
     function calculate() {
-        function abreModal() {
-            $("#myModal").modal({
-                show: true
-            });
-        }
-
-        setTimeout(abreModal, 1000);
+  
         const fault = Number(fault_month.value);
         const year = Number(year_consulting.value);
-
         let sunday = 53
         let count = sunday - fault
 
         result.innerHTML = ''
         modal_body.innerHTML = ''
 
-
         if (fault == '' || year == '') {
             result.innerHTML = `Preencha todos os campos`
 
-        }
-
-        else if (fault == '' && year >= 10) {
-            result.innerHTML = `Preencha todos os campos e insira um tempo até 9 anos`
-            return
-        }
-
-        else if (year < 1) {
+        }else if (year < 1) {
             result.innerHTML = `Insira um número valido`
             return
+        }else{
+            function abreModal() {
+            $("#myModal").modal({
+                show: true
+            });
         }
-         else {
-
+        setTimeout(abreModal, 1000);
             for (let i = 1; i <= year; i++) {
 
                 modal_body.innerHTML += `Ao longo de ${i} ano(s), você acumulará mais ${count * i} versinhos<br>`
 
             }
-
         }
     }
-
 </script>
 <script>
     function cadastrar() {

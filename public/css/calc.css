@@ -1,5 +1,7 @@
 /* NAV BAR */
-
+body{
+    overflow: hidden;
+}
 .nav {
     background-color:whitesmoke;
     width: 100%;
@@ -57,7 +59,6 @@ nav ul li {
 /* NAV BAR */
 /* CONTAINER */
 .container{
-    height: 511px;
     width: 100%;
     background-color: rgb(185, 185, 185);
     display: flex;
@@ -94,7 +95,7 @@ nav ul li {
 
 .calculadora{
     width: 550px;
-    height: 380px;
+    height: 395px;
     background-color: rgb(92, 92, 92);
     z-index: 3;
     border-radius: 20px;
@@ -107,11 +108,12 @@ nav ul li {
 
 .calculadora input{
    height: 30px;
-   width: 400px;
+   width: 470px;
    border-radius: 20px;
    border-style: solid;
    margin-left: 20px;
    border-color: black;
+   text-align: center;
 }
 
 
