@@ -142,8 +142,8 @@ body {
 
 
 .login {
-  height: 780px;
-  background-color:rgb(92, 92, 92) ;
+  height: 574px;
+  background-image:url(https://i.pinimg.com/originals/a1/5d/a2/a15da252d3750e10003fd6f7c4a4f379.jpg) ;
   justify-content: center;
   align-items: center;
 
@@ -154,12 +154,11 @@ body {
 .login .container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
 }
 
 .card {
-  padding-top: 20px;
   width: 50%;
   background-color: #e5e5e5;
   border-bottom-left-radius: 10px;
@@ -172,6 +171,10 @@ body {
   height: fit-content;
   padding: 20px 0;
 
+}
+
+.card-cadastro{
+  display: flex;
 }
 
 .card h2 {
