@@ -110,31 +110,31 @@
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-       function procurar(){
-        let nomeVar = sessionStorage.NOME_USUARIO
-        
-        fetch("/usuarios/procurar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+        function procurar() {
+            let nomeVar = sessionStorage.NOME_USUARIO
 
-            if (resposta.ok) {
-                console.log(resposta);
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMPRESA_NOME
-                });
-            }
-        })
-       }
-    
+            fetch("/usuarios/procurar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMPRESA_NOME = json.razao_social;
+                    });
+                }
+            })
+        }
+
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -163,7 +163,7 @@
                     }, 1000); // apenas para exibir o loading
 
                 });
-
+                
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");

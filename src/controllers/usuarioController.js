@@ -23,6 +23,7 @@ function autenticar(req, res) {
                             cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
+                            razao_social: resultadoAutenticar[0].razao_social
 
                         })
                     } else if (resultadoAutenticar.length == 0) {
@@ -83,32 +84,33 @@ function cadastrar(req, res) {
 }
 
 
-function procurar(req, res) {
-    var nome = req.body.nomeServer;
+// function procurar(req, res) {
+//     var nome = req.body.nomeServer;
 
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está indefinido!");
-    }else {
+//     if (nome == undefined) {
+//         res.status(400).send("Seu nome está indefinido!");
+//     }else {
 
-        usuarioModel.procurar(nome)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
-}
+//         usuarioModel.procurar(nome)
+//             .then(
+//                 function (resultado) {
+//                     console.log(resultado)
+//                     res.json(resultado);
+//                 }
+//             ).catch(
+//                 function (erro) {
+//                     console.log(erro);
+//                     console.log(
+//                         "\nHouve um erro ao realizar o cadastro! Erro: ",
+//                         erro.sqlMessage
+//                     );
+//                     res.status(500).json(erro.sqlMessage);
+//                 }
+//             );
+//     }
+// }
 module.exports = {
     autenticar,
     cadastrar,
-    procurar
+    // procurar
 }

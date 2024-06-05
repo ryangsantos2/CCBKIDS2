@@ -4,10 +4,8 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
     var empresaId = sessionStorage.EMPRESA_NOME;
   
-   
-
     var b_usuario = document.getElementById("b_usuario");
-    var b_empresa = document.getElementById('b_empresa');
+    var b_empresa = document.getElementById("b_empresa");
 
     if (email != null && nome != null) {
         b_usuario.innerHTML = nome;

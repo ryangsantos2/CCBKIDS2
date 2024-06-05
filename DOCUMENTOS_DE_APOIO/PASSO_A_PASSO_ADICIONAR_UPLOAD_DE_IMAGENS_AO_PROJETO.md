@@ -1,4 +1,4 @@
-Caso você queira adicionar a funcionalidade de "upload de imagens" no seu projeto, você pode:
+nCaso você queira adicionar a funcionalidade de "upload de imagens" no seu projeto, você pode:
 
 - OPÇÃO 1 - Criar uma coluna no banco de dados com tipo VARCHAR que irá receber a URL da sua imagem, como por exemplo " http: // meusite. com/ minhaimagem .png". Assim o campo que será preenchido pelo usuário será uma input de texto.
   - Prós: Simples de implementar, uma vez que os campos de login e cadastro também são assim.
