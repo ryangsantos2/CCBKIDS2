@@ -128,7 +128,7 @@
 
     let presenca = total - falta_crianca
     let falta = total - presenca
-    let nomeFilho = sessionStorage.ID_USUARIO;
+    let usuario = sessionStorage.ID_USUARIO;
 
     
     const data = {
@@ -164,7 +164,7 @@
         body: JSON.stringify({
             presencaServer: presenca,
             faltaServer: falta,
-            idFilhoServer: nomeFilho
+            usuarioServer: usuario
         })
     })
     .then(function(resposta){

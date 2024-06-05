@@ -5,7 +5,7 @@
 /*
 comandos para mysql server
 */
-
+drop database individual;
 CREATE DATABASE individual;
 USE individual;
 
@@ -21,16 +21,14 @@ CREATE TABLE usuario (
     cpf CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50),
-    filho VARCHAR(50),
-    idade INT,
 	fk_empresa INT,
 	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
 );
 
 CREATE TABLE frequencia(
 idFreq int PRIMARY KEY AUTO_INCREMENT,
-fkFilho int,
-	FOREIGN KEY(fkFilho)
+fkUser int,
+	FOREIGN KEY(fkUser)
 		REFERENCES usuario(id),
 falta int,
 presenca int
@@ -51,7 +49,7 @@ insert into empresa (razao_social, cnpj) values
 
 SELECT * FROM usuario;
 SELECT * FROM empresa; 
-SELECT usuario.filho as Filho, frequencia.falta as Falta, frequencia.presenca AS Presenca
+SELECT usuario.nome as Usuario, frequencia.falta as Falta, frequencia.presenca AS Presenca
 FROM frequencia
 JOIN usuario
-ON frequencia.fkFilho = usuario.id;
+ON frequencia.fkUser = usuario.id;
