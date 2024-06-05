@@ -57,14 +57,17 @@
                     </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                 </div>
-
                 <div id="div_aguardar" class="loading-div">
                     <img src="./assets/circle-loading.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
+                <div>
+                    <span>Ainda não tem conta? <a href="./cadastro.html">Criar conta</a></span>
+                </div>
             </div>
             <div class="space"></div>
+
         </div>
     </div>
 </body>
@@ -163,7 +166,7 @@
                     }, 1000); // apenas para exibir o loading
 
                 });
-                
+
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
