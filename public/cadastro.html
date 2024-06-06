@@ -92,6 +92,7 @@
 
 </html>
 <script>
+
   function cadastrar() {
     aguardar();
 
@@ -103,11 +104,9 @@
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var comumVar = listaEmpresas.value;
-
-    let listaNumero = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
     const arroba = emailVar.indexOf('@')
     const ponto = emailVar.indexOf('.')
+    const listaNumero = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 
 
@@ -157,6 +156,21 @@
       return false;
     }
 
+    contemNumero = false
+
+    for (let autenticacao = 0; autenticacao < listaNumero.length; autenticacao++) {
+      if (senhaVar.indexOf(listaNumero[autenticacao])>0) {
+        contemNumero = true
+      }
+    }
+
+    if (contemNumero == false) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Sua senha precisa conter números!)";
+      finalizarAguardar();
+      return false;
+    }
     if (senhaVar != confirmacaoSenhaVar) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
