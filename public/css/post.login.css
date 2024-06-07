@@ -17,9 +17,12 @@ overflow: hidden;
     display: flex;
     flex-direction:column;
     align-items: center;
+    justify-content: center;
 }
 
-.hello button{
+.hello button{ 
+    width: 100px;
+    height: 40px;
     margin-top: 260px;
     margin-left: 50px;
     background-color: brown;
@@ -27,8 +30,6 @@ overflow: hidden;
     border-radius: 20px;
     border-style: solid;
     border-color: black;
-    width: 100px;
-    height: 40px;
 }
 
 .nav h3{
@@ -47,7 +48,7 @@ overflow: hidden;
 
 .informacao{
     background-color: rgb(166, 155, 177);
-    width: 700px;
+    width: 750px;
     height: 220px;
     margin: 50px;
     border-radius: 15px;
@@ -85,94 +86,15 @@ overflow: hidden;
 }
 
 
-.carousel {
-     width: 60vh;
-    height: 34vh;
-     margin-left: 1vh;
-    margin-top: 8vh;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-    
-  .carousel-slide {
-    display: flex;
-    width: 100%;
-  }
-
-  
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .set {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 2;
-    
-  }
-  
-  .carousel-buttons {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-}
-
-.nextBtn{
-    position: absolute;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    right: 0;
-    
-}
-
-#prevBtn img,
-#nextBtn img{
-    background-color: white;
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
-}
-
-.space{
-    background-color: rgb(214, 214, 221);
-}
-
-.space span{
-    margin-left: 20px;
-    font-size: larger; /* Ajustando o tamanho da fonte */
-    font-weight: bold;
-}
-
-.intro_quiz{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-
-.quiz_direction{
+.quiz_direction {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.quiz_direction img{
+  }
+    
+  .quiz_direction img{
     width: 240px;
     height: 240px;
     border-radius: 20px;
@@ -186,6 +108,28 @@ overflow: hidden;
     background-color: rgb(214, 214, 221);
     border: 0;
 }
+
+
+.space{
+    background-color: rgb(214, 214, 221);
+    display: flex;
+    justify-content: center;
+}
+
+.space span{
+    font-size: larger; /* Ajustando o tamanho da fonte */
+    font-weight: bold;
+}
+
+.intro_quiz{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 
 .pages{
     display: flex;
