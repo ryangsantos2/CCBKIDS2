@@ -146,7 +146,8 @@ body {
   background-image:url(https://i.pinimg.com/originals/a1/5d/a2/a15da252d3750e10003fd6f7c4a4f379.jpg) ;
   justify-content: center;
   align-items: center;
-
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -160,17 +161,17 @@ body {
 
 .card {
   width: 50%;
-  background-color: #e5e5e5;
+  background-color: rgb(229, 229, 229, 0.5);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: brown;
+  color: black;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
-
+  
 }
 
 .card-cadastro{
