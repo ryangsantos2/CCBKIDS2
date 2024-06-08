@@ -11,7 +11,6 @@ CREATE TABLE comum (
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
-    cpf CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50),
 	fk_comum INT,
@@ -42,6 +41,7 @@ insert into comum (nome_comum, cnpj) values
 
 SELECT * FROM usuario;
 SELECT * FROM comum; 
+
 SELECT usuario.nome as Usuario, frequencia.falta as Falta, frequencia.presenca AS Presenca
 FROM frequencia
 JOIN usuario

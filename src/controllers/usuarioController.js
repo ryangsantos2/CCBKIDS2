@@ -20,7 +20,6 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
                         res.json({
                             id: resultadoAutenticar[0].id,
-                            cpf: resultadoAutenticar[0].cpf,
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
                             nome_comum: resultadoAutenticar[0].nome_comum
@@ -46,7 +45,6 @@ function autenticar(req, res) {
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
-    var cpf = req.body.cpfServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
     var comumId = req.body.comumServer;
@@ -54,9 +52,7 @@ function cadastrar(req, res) {
     // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está indefinido!");
-    } else if (cpf == undefined) {
-        res.status(400).send("Seu cpf está indefinido!");
-    } else if (email == undefined) {
+    }   else if (email == undefined) {
         res.status(400).send("Seu email está indefinido!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
@@ -65,7 +61,7 @@ function cadastrar(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cpf, email, senha, comumId)
+        usuarioModel.cadastrar(nome, email, senha, comumId)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -83,34 +79,7 @@ function cadastrar(req, res) {
     }
 }
 
-
-// function procurar(req, res) {
-//     var nome = req.body.nomeServer;
-
-//     if (nome == undefined) {
-//         res.status(400).send("Seu nome está indefinido!");
-//     }else {
-
-//         usuarioModel.procurar(nome)
-//             .then(
-//                 function (resultado) {
-//                     console.log(resultado)
-//                     res.json(resultado);
-//                 }
-//             ).catch(
-//                 function (erro) {
-//                     console.log(erro);
-//                     console.log(
-//                         "\nHouve um erro ao realizar o cadastro! Erro: ",
-//                         erro.sqlMessage
-//                     );
-//                     res.status(500).json(erro.sqlMessage);
-//                 }
-//             );
-//     }
-// }
 module.exports = {
     autenticar,
     cadastrar,
-    // procurar
 }

@@ -197,20 +197,32 @@ body {
 }
 
 .formulario input {
-  border: 2px solid grey;
-  text-align: center;
-  border-radius: 10px;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 0%;
+  border-bottom-color:rgb(0, 0, 0);
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+  background-color:rgb(255, 255, 255, 0.1);
+}
+
+.formulario input::placeholder{
+  color: black;
+  font-weight: 700;
+  text-align: start;
 }
 
 .formulario select {
-  border: 2px solid grey;
-  background-color: white;
-  color: gray;
-  height: 36px;
-  text-align: center;
-  border-radius: 10px;
   margin: 0;
+  height: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 0%;
+  border-bottom-color:rgb(0, 0, 0);
+  border-left-style: none;
+  border-top-style: none;
+  border-right-style: none;
+  background-color:rgb(255, 255, 255, 0.1);
 }
 
 .campo {
@@ -230,7 +242,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: brown;
+  background-color: rgb(120, 39, 39);
   width: 120px;
   height: 30px;
   align-self: center;
@@ -302,7 +314,7 @@ input {
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #db0e5d;
+  background-color: rgb(120, 39, 39);
   width: 120px;
   align-self: center;
   margin-top: 5px;
