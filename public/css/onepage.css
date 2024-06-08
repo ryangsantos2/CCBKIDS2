@@ -229,62 +229,81 @@ nav ul li {
 
 .onu {
     background-color: rgb(92, 92, 92);
-    width: 100%;
-    height: 550px;
+    width: 199vh;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    padding: 20px;
 }
 
-.card1, .card2, .card3, .card4 {
+.card2, .card3, .card4, .hidden2, .hidden3, .hidden4 {
     width: 400px;
     height: 250px;
-    display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: gainsboro;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
 }
 
 .card1 {
     display: flex;
-    width: 500px;
+    width: 100%;
     text-align: start;
     justify-content:center;
     align-items: center;
     margin-left: 150px;
     flex-direction: column;
     color: white;
-
+    margin-bottom: 20px;
 }
 
-.card2 {
+.card1 h1 h2{
+    margin-bottom: 100px;
+}
+
+.card2, .card3, .card4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 150px;
+    width: 380px;
+    height: 250px;
     background-color: gainsboro;
     border-radius: 10px;
-    
-    
+    text-align: center;
+    margin: 0;
+    margin-bottom: 60px;
 }
 
-.card3 {
+.hidden2, .hidden3, .hidden4 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 250px;
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+    margin-bottom: 70px;
+    background-color: gainsboro;
+    border-radius: 10px;
+}
+
+.card2 .hidden2, .card3 .hidden3, .card4 .hidden4 {
+    display: none;
+}
+
+.container2, .container3, .container4 {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gainsboro;
-    border-radius: 10px;
-    
-
-}
-
-.card4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gainsboro;
-    border-radius: 10px;
-    
-
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .esquerda .direita{
     display: flex;
@@ -304,8 +323,8 @@ nav ul li {
     height: 100%;
 }
 .onu img{
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
 }
 /* Onu */
 

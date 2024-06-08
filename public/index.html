@@ -60,8 +60,10 @@
                     EUROPEUS, FRANCESCON FOI RESPONSAVEL PELA PREGAÇÃO
                     TAMBÉM NAS ASSEMBLEIAS CRISTÃS NA ARGENTINA E
                     TAMBEM NA ASSEMBLEIA DE DEUS NA ITALIA, COM ISSO, TRAZENDO
-                    OS CONHECIMENTOS CRISTÃOS PARA MAIS 3 PAISES. AS PRIMEIRAS CONGREGAÇÕES EXISTENTES NAS TERRAS BRASILEIRAS, 
-                    FORAM FUNDADAS NO PARANÁ, EM SANTO ANTONIO DA PLATINA, E TAMBÉM EM SÃO PAULO, NA REGIÃO DO BRÁS(ATUALMENTE SENDO A SEDE DAS 
+                    OS CONHECIMENTOS CRISTÃOS PARA MAIS 3 PAISES. AS PRIMEIRAS CONGREGAÇÕES EXISTENTES NAS TERRAS
+                    BRASILEIRAS,
+                    FORAM FUNDADAS NO PARANÁ, EM SANTO ANTONIO DA PLATINA, E TAMBÉM EM SÃO PAULO, NA REGIÃO DO
+                    BRÁS(ATUALMENTE SENDO A SEDE DAS
                     CONGREGAÇÕES NO MUNDO). A CONGREGAÇÃO
                     SE TORNOU UM MOVIMENTO QUE, EM ESTIMATIVA, ESTÁ PRESENTE EM 78 PAÍSES, SENDO SUA GRANDE PARTE NO
                     BRASIL,
@@ -84,7 +86,7 @@
                     Até: 20h
                     <br>
                     ou ao final dos cultos
-                    
+
                 </b>
             </div>
         </div>
@@ -96,48 +98,111 @@
                 OBJETIVOS DE DESENVOLVIMENTO SUSTENTAVEL
             </h1>
             <h2>
-                Objetivos que é atendido pelo nosso trabalho, segundo os objetivos de desenvolvimento sustentavel da ONU:
+                Objetivos que é atendido pelo nosso trabalho, segundo os objetivos de desenvolvimento sustentavel da
+                ONU:
             </h2>
         </div>
-        <div class="card2">
-            <h3>EDUCAÇÃO DE QUALIDADE</h3>
-            <img src="./assets/educacao.png" alt="">
+        <div class="container2">
+            <div class="card2">
+                <h3>EDUCAÇÃO DE QUALIDADE</h3>
+                <img src="./assets/educacao.png" alt="">
+            </div>
+            <div class="hidden2">
+                <span>
+                    Disponibilidade de materiais didáticos que auxiliam na aprendizagem no espaço infantil
+                </span>
+            </div>
+        </div>
+        <div class="container3">
+            <div class="card3">
+                <H3>PAZ E JUSTIÇA</H3>
+                <img src="./assets/pomba.png" alt="">
+            </div>
+            <div class="hidden3">
+                <span>
+                    Presença da colaboração e solidariedade de, tanto membros pedagogos,
+                    quanto voluntários, para auxiliar no aprendizado dentro do espaço infantil.
+                </span>
+            </div>
+        </div>
+        <div class="container4">
+            <div class="card4">
+                <h3>PARCERIA PELAS METAS</h3>
+                <img src="./assets/parceria.png" alt="">
+            </div>
+            <div class="hidden4">
+                <span>
+                    Ser uma organização que se mantém de pé por doações e colaborações dos membros da congregação.
+                    Tudo isso sem fins lucrativos ou monetários.
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="img-redes">
+            <img class="footer-logo" src="assets/logo.png">
+            <img class="redes" src="assets/REDESSOCIAIS.png">
+        </div>
+        <div class="text-footer">
+            <ul>
+                <li><a class="li-footer" href="./login.html">LOGIN</a></li>
+                <li><a class="li-footer" href="./cadastro.html">CADASTRO</a></li>
+                <li><a class="li-footer" href="#sobre">SOBRE NÓS</a></li>
+            </ul>
         </div>
 
-        <div class="card3">
-            <H3>PAZ E JUSTIÇA</H3>
-            <img src="./assets/pomba.png" alt="">
-        </div>
-        <div class="card4">
-            <h3>PARCERIA PELAS METAS</h3>
-            <img src="./assets/parceria.png" alt="">
-        </div>
     </div>
-<!-- FOOTER -->
-<div class="footer">       
-    <div class="img-redes">     
-        <img class="footer-logo" src="assets/logo.png">
-        <img class="redes" src="assets/REDESSOCIAIS.png">
+    <div class="copyright">
+        <span class="text-copy">©2024 CCBKIDS</span>
     </div>
-    <div class="text-footer">
-        <ul>
-            <li><a class="li-footer" href="./login.html">LOGIN</a></li>
-            <li><a class="li-footer" href="./cadastro.html">CADASTRO</a></li>
-            <li><a class="li-footer" href="#sobre">SOBRE NÓS</a></li>
-        </ul>
-    </div>
-   
-</div>
- <div class="copyright">
-    <span class="text-copy">©2024 CCBKIDS</span>
-</div>
 
 </body>
 
 </html>
-
 <script>
-    function cadastrar(){
+    function cadastrar() {
         window.location.href = "cadastro.html"
-     }
+    }
+</script>
+<script>
+
+    document.querySelector('.container2').addEventListener('click', function () {
+        const card2 = document.querySelector('.card2');
+        const hidden2 = document.querySelector('.hidden2');
+
+        if (card2.style.display === 'none') {
+            card2.style.display = 'flex';
+            hidden2.style.display = 'none';
+        } else {
+            card2.style.display = 'none';
+            hidden2.style.display = 'flex';
+        } none
+    });
+
+    document.querySelector('.container3').addEventListener('click', function () {
+        const card3 = document.querySelector('.card3');
+        const hidden3 = document.querySelector('.hidden3');
+
+        if (card3.style.display === 'none') {
+            card3.style.display = 'flex';
+            hidden3.style.display = 'none';
+        } else {
+            card3.style.display = 'none';
+            hidden3.style.display = 'flex';
+        }
+    });
+
+    document.querySelector('.container4').addEventListener('click', function () {
+        const card4 = document.querySelector('.card4');
+        const hidden4 = document.querySelector('.hidden4');
+
+        if (card4.style.display === 'none') {
+            card4.style.display = 'flex';
+            hidden4.style.display = 'none';
+        } else {
+            card4.style.display = 'none';
+            hidden4.style.display = 'flex';
+        }
+    });
 </script>
