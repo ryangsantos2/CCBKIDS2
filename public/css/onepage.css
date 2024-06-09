@@ -230,7 +230,7 @@ nav ul li {
 .onu {
     background-color: rgb(92, 92, 92);
     width: 199vh;
-    height: 550 px;
+    height: 550px;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
