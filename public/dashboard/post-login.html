@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="quiz_direction">
-                        <button class="button_quiz" onclick="fazerQuiz()"><img
+                    <button class="button_quiz" onclick="fazerQuiz()"><img
                             src="https://img.quizur.com/f/img5f3ad5ee0428a3.87745517.png?lastEdited=1597691502"
                             alt=""></button>
                 </div>
@@ -48,7 +48,8 @@
             <div class="page2">
                 <div class="intro_quiz">
                     <div id="change" style="display: block;">
-                        <br><br><span class="titleChart">O espaço funciona 5 dias num mês, portanto, quantos dias você<br>não compareceu este
+                        <br><br><span class="titleChart">O espaço funciona 5 dias num mês, portanto, quantos dias
+                            você<br>não compareceu este
                             mês?</span><br><br>
                         <select id="qtd_faltas">
                             <option value="0">0</option>
@@ -64,7 +65,7 @@
                         <canvas id="tabela_linha"></canvas>
                     </div>
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -75,29 +76,6 @@
     }
 </script>
 <script>
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const carouselSlide = document.querySelector('.carousel-slide');
-
-    let counter = 0;
-    const slideWidth = carouselSlide.children[0].clientWidth;
-
-    nextBtn.addEventListener('click', () => {
-        if (counter >= carouselSlide.children.length - 1) return;
-        counter++;
-        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-        carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (counter <= 0) return;
-        counter--;
-        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-        carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
-    });
-
-</script>
-<script>
     function fazerQuiz() {
         window.location.href = 'quiz.html'
     }
@@ -106,60 +84,60 @@
     function resultado() {
         change.style.display = 'none'
         change2.style.display = 'block'
-    
-    let total = 5
-    let falta_crianca = Number(qtd_faltas.value)
 
-    let presenca = total - falta_crianca
-    let falta = total - presenca
-    let usuario = sessionStorage.ID_USUARIO;
+        let total = 5
+        let falta_crianca = Number(qtd_faltas.value)
 
-    
-    const data = {
-        labels: [
-            'Faltas',
-            'Presença'
-        ],
-        datasets: [{
-            data: [falta, presenca],
-            backgroundColor: [
-                'rgb(226, 43, 43)',
-                'rgb(43, 226, 67)'
+        let presenca = total - falta_crianca
+        let falta = total - presenca
+        let usuario = sessionStorage.ID_USUARIO;
+
+
+        const data = {
+            labels: [
+                'Faltas',
+                'Presença'
             ],
-            hoverOffset: 4
-        }]
-    };
-    const config = {
-        type: 'doughnut',
-        data: data,
-    };
+            datasets: [{
+                data: [falta, presenca],
+                backgroundColor: [
+                    'rgb(226, 43, 43)',
+                    'rgb(43, 226, 67)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+        const config = {
+            type: 'doughnut',
+            data: data,
+        };
 
-    const tabela_linha = new Chart(
-        document.getElementById('tabela_linha'),
-        config
-    );
-    
-    fetch('/freq/armazenar', {
-        method: 'POST',
-        headers: {
-        "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            presencaServer: presenca,
-            faltaServer: falta,
-            usuarioServer: usuario
+        const tabela_linha = new Chart(
+            document.getElementById('tabela_linha'),
+            config
+        );
+
+        fetch('/freq/armazenar', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                presencaServer: presenca,
+                faltaServer: falta,
+                usuarioServer: usuario
+            })
         })
-    })
-    .then(function(resposta){
-        if(resposta.ok){
-            console.log('Deu bom!')
-        } else {
-            console.log('Deu ruim!')
-        }
-    })
-   
-    
-}
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log('Deu bom!')
+                } else {
+                    console.log('Deu ruim!')
+                }
+            })
+
+
+    }
 </script>
 
 </html>
